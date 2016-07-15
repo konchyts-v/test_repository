@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from .settings import MEDIA_ROOT, DEBUG
 
 urlpatterns = [
 	# Students urls
@@ -30,3 +31,9 @@ urlpatterns = [
     url(r'^groups/(?P<gid>\d+)/delete/$', 'students.views.groups.groups_delete',name='groups_delete'),
     url(r'^admin/', admin.site.urls),
 ]
+
+if DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': MEDIA_ROOT})
+    ]
