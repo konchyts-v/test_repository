@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-
+from db import DATABASES_for_pr
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -76,15 +76,7 @@ WSGI_APPLICATION = 'studentsdb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'USER': 'students_user1',
-        'PASSWORD': '5282',
-        'NAME': 'students_db1',
-    }
-}
+DATABASES = DATABASES_for_pr
 
 
 # Password validation
