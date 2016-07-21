@@ -25,6 +25,7 @@
     <div class="col-sm-10">
       <input type="text" value="{{ request.POST.first_name }}"
              name="first_name" id="first_name"
+             placeholder="Введіть ваше ім'я"
              class="form-control" />
       <span class="help-block">{{ errors.first_name }}</span>
     </div>
@@ -32,7 +33,7 @@
   <div class="form-group {% if errors.last_name %}has-error{% endif %}">
     <label for="last_name" class="col-sm-2 control-label">Прізвище*</label>
     <div class="col-sm-10">
-      <input type="text" value="{{ request.POST.first_name }}"
+      <input type="text" value="{{ request.POST.last_name }}"
              name="last_name" id="last_name"
              placeholder="Введіть ваше прізвище"
              class="form-control" />
@@ -42,8 +43,9 @@
   <div class="form-group {% if errors.middle_name %}has-error{% endif %}">
     <label for="middle_name"class="col-sm-2 control-label">По-батькові</label>
     <div class="col-sm-10">
-      <input type="text" value="{{ request.POST.first_name }}"
+      <input type="text" value="{{ request.POST.middle_name }}"
              name="middle_name" id="middle_name"
+             placeholder="Введіть ваше по-батькові"
              class="form-control" />
       <span class="help-block">{{ errors.middle_name }}</span>
     </div>
@@ -61,7 +63,8 @@
   <div class="form-group {% if errors.photo %}has-error{% endif %}">
     <label for="photo"class="col-sm-2 control-label">Фото</label>
     <div class="col-sm-10">
-      <input type="file" value="" name="photo" id="photo"
+      <input type="file" value="" name="photo"
+      		 id="photo"
              class="form-control" />
       <span class="help-block">{{ errors.photo }}</span>
     </div>
@@ -71,6 +74,7 @@
     <div class="col-sm-10">
       <input type="text" value="{{ request.POST.ticket }}"
              name="ticket" id="ticket"
+             placeholder="Введіть номер вашого студ.квитка"
              class="form-control" />
       <span class="help-block">{{ errors.ticket }}</span>
     </div>
@@ -91,7 +95,9 @@
   <div class="form-group {% if errors.notes %}has-error{% endif %}">
     <label for="notes" class="col-sm-2 control-label">Додаткові Нотатки</label>
     <div class="col-sm-10">
-      <textarea name="notes" id="notes" class="form-control">{{ request.POST.notes }}</textarea>
+      <textarea name="notes" id="notes" 
+      			class="form-control"
+      			placeholder="Додайте інформацію про себе для нотаток">{{ request.POST.notes }}</textarea>
       <span class="help-block">{{ errors.notes }}</span>
     </div>
   </div>
