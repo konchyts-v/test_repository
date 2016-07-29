@@ -5,6 +5,7 @@ from django.forms import ModelForm, ValidationError
 
 from .models.student import Student
 from .models.group import Group
+from .models.monthjournal import MonthJournal
 
 
 class StudentFormAdmin(ModelForm):
@@ -35,9 +36,10 @@ class StudentAdmin(admin.ModelAdmin):
 class GroupFormAdmin(ModelForm):
 
 	def clean_leader(self):
-		student = self.cleaned_data['leader']
-		if student.student_group != self.instance:
-			raise ValidationError(u'Студент навчається в іншій групі', code='invalid')
+		if self.cleaned_data['leader']:
+			student = self.cleaned_data['leader']
+			if student.student_group != self.instance:
+				raise ValidationError(u'Студент навчається в іншій групі', code='invalid')
 
 		return self.cleaned_data['leader']
 
@@ -52,3 +54,4 @@ class GroupAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Student, StudentAdmin)
 admin.site.register(Group, GroupAdmin)
+admin.site.register(MonthJournal)

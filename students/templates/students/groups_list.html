@@ -9,7 +9,7 @@
 {% block content %}
 		  {% if groups %}
           <!-- Add Student Button -->
-          <a class="btn btn-primary" href="{% url 'students_add' %}">Додати Студента</a>
+          <a class="btn btn-primary" href="{% url 'groups_add' %}">Додати Групу</a>
 
           <!-- Start Students Listing -->
 		  <table class="table table-hover table-striped">
@@ -60,18 +60,8 @@
 		  {% else %}
 		  <p>Поки немає груп у базі.</p>
 		  {% endif %}
-		  {% if groups.has_other_pages %}
-		  <nav>
-			<ul class="pagination">
-			  <li><a href="{% url "groups" %}?page=1&amp;order_by={{ request.GET.order_by }}&amp;reverse={{ request.GET.reverse }}">&laquo;</a></li>
-			  {% for p in groups.paginator.page_range %}
-			  <li {% if groups.number == p %}class="active"{% endif %}>
-			    <a href="{% url "groups" %}?page={{ p }}&amp;order_by={{ request.GET.order_by }}&amp;reverse={{ request.GET.reverse }}">{{ p }}</a>
-			  </li>
-			  {% endfor %}
-			  <li><a href="{% url "groups" %}?page={{ groups.paginator.num_pages }}&amp;order_by={{ request.GET.order_by }}&amp;reverse={{ request.GET.reverse }}">&raquo;</a></li>
-			</ul>
-		  </nav>
-		  {% endif %}
+			{% with object_list=groups %}
+  				{% include "students/pagination.html" %}
+			{% endwith %}
 		  <!-- End Students Listing -->
 		  {% endblock content %}

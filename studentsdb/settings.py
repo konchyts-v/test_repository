@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'studentsdb.context_processors.students_proc',
+                'students.context_processors.groups_processor'
             ],
         },
     },
@@ -135,3 +136,6 @@ EMAIL_USE_SSL = True
 
 # for django_crispy_forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+
+

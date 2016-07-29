@@ -38,3 +38,29 @@ select,
 input {
   max-width: 300px;
 }
+
+td.day-box,
+th.day-header {
+  padding: 4px !important;
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+#ajax-progress-indicator {
+  display: none;
+}
+
+#loading {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+

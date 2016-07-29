@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.forms import ModelForm
 from django.views.generic import UpdateView, DeleteView
+#from django.db.models import DoesNotExist
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -14,12 +15,19 @@ from crispy_forms.bootstrap import FormActions
 
 from ..models.student import Student
 from ..models.group import Group
+from ..util import paginate, get_current_group
 
 
 
 
 def students_list(request):
-    students = Student.objects.all()
+    # check if we need to show only one group of students
+    current_group = get_current_group(request)
+    if current_group:
+        students = Student.objects.filter(student_group=current_group).order_by('last_name')
+    else:
+        # otherwise show all students
+        students = Student.objects.all().order_by('last_name')
 
     # try to order students list
     order_by = request.GET.get('order_by', '')
@@ -29,20 +37,9 @@ def students_list(request):
             students = students.reverse()
 
     # paginate students
-    paginator = Paginator(students, 3)
-    page = request.GET.get('page')
-    try:
-        students = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page
-        students = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver
-        # last page of results
-        students = paginator.page(paginator.num_pages)
+    context = paginate(students, 3, request, {}, var_name='students')
             
-    return render(request, 'students/students_list.html',
-        {'students': students})
+    return render(request, 'students/students_list.html', context)
 
 def students_add(request):
     # was form posted?
@@ -133,8 +130,8 @@ def students_add(request):
         return render(request, 'students/students_add.html',
             {'groups': Group.objects.all().order_by('title')})
 
-class StudentUpdateForm(ModelForm):
-# fields
+'''class StudentUpdateForm(ModelForm):
+ fields
 
     class Meta:
         model = Student
@@ -161,9 +158,9 @@ class StudentUpdateForm(ModelForm):
         # add buttons
         self.helper.layout[-1] = FormActions(
             Submit('add_button', u'Зберегти', css_class="btn btn-primary"),
-            Submit('cancel_button', u'Скасувати', css_class="btn btn-link"))
+            Submit('cancel_button', u'Скасувати', css_class="btn btn-link"))'''
 
-class StudentUpdateView(UpdateView):
+'''class StudentUpdateView(UpdateView):
     model = Student
     template_name = 'students/students_edit.html'
     form_class = StudentUpdateForm
@@ -175,7 +172,108 @@ class StudentUpdateView(UpdateView):
         if request.POST.get('cancel_button'):
             return HttpResponseRedirect(u'%s?status_message=Редагування студента відмінено!' % reverse('home'))
         else:
-            return super(StudentUpdateView, self).post(request, *args, **kwargs)
+            return super(StudentUpdateView, self).post(request, *args, **kwargs)'''
+
+def students_edit(request, pk):
+    # was form posted?
+    try:
+        student = Student.objects.get(pk=pk)
+    except Student.DoesNotExist:
+        return HttpResponseRedirect(
+            u'%s?status_message=Студента не існує' % 
+            reverse('home'))
+    if request.method == "POST":
+        # was form add button clicked?
+        if request.POST.get('save_button') is not None:
+            
+
+            # TODO: validate input from user
+            errors = {}
+            # validate student data will go here
+            middle_name = request.POST.get('middle_name')
+            notes = request.POST.get('notes')
+
+            # validate user input
+            first_name = request.POST.get('first_name', '').strip()
+            if not first_name:
+                errors['first_name'] = u"Ім'я є обов'язковим"
+
+            last_name = request.POST.get('last_name', '').strip()
+            if not last_name:
+                errors['last_name'] = u"Прізвище є обов'язковим"
+
+            birthday = request.POST.get('birthday', '').strip()
+            if not birthday:
+                errors['birthday'] = u"Дата народження є обов'язковою"
+            else:
+                try:
+                    datetime.strptime(birthday, '%Y-%m-%d')
+                except Exception:
+                    errors['birthday'] = u"Введіть коректний формат дати (напр. 1984-12-30)"
+            
+            ticket = request.POST.get('ticket', '').strip()
+            if not ticket:
+                errors['ticket'] = u"Номер білета є обов'язковим"
+
+            student_group = request.POST.get('student_group', '').strip()
+            if not student_group:
+                errors['student_group'] = u"Оберіть групу та студента"
+            else:
+                groups = Group.objects.filter(pk=student_group)
+                if len(groups) != 1:
+                    errors['student_group'] = u"Оберіть коректну групу"
+
+            photo = request.FILES.get('photo')
+            if photo:
+                destination = photo.name[-3:]
+                destinations = ('jpg', 'bmp', 'png', 'gif')
+                if destination in destinations:
+                    if photo.size <= 2000000:
+                        data['photo'] = photo
+                    else:
+                        errors['photo'] = u"Розмір фото не повинен перевищувати 2Мб"
+                else:
+                    errors['photo'] = u"Виберіть правильний формат для фото"
+
+            # save student        
+            if not errors:
+                #student = Student(**data)
+                student.first_name = first_name
+                student.last_name = last_name
+                student.middle_name = middle_name
+                student.birthday = birthday
+                student.ticket = ticket
+                student.student_group = groups[0]
+                student.photo = photo
+                group_of_students = Group.objects.filter(leader=student)
+                if len(group_of_students) > 0 and student.student_group != group_of_students[0]:
+                    errors['student_group'] = u"Студент є старостою іншої групи"
+                    return render(request, 'students/students_edit.html',
+                        {'groups': Group.objects.all().order_by('title'),
+                        'errors': errors, 'student': student})
+                else:
+                    student.save()  
+
+                # redirect user to students list
+                return HttpResponseRedirect(
+                    u'%s?status_message=Студента "%s %s" успішно редаговано!' % 
+                    (reverse('home'), last_name, first_name))
+
+            else:
+                # render form with errors and previous user input
+                return render(request, 'students/students_edit.html',
+                    {'groups': Group.objects.all().order_by('title'),
+                    'errors': errors, 'student': student})
+
+        elif request.POST.get('cancel_button') is not None:
+            # redirect to home page on cancel button
+            return HttpResponseRedirect(
+                u'%s?status_message=Редагування студента скасовано!' % 
+                reverse('home'))
+    else:
+        # initial form render
+        return render(request, 'students/students_edit.html',
+            {'groups': Group.objects.all().order_by('title'), 'student': student})
 
 class StudentDeleteView(DeleteView):
     model = Student
