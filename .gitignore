@@ -3,5 +3,4 @@
 *.json
 *~
 *.egg-info
-*.mo
 *.egg
