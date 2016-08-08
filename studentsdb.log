@@ -1,0 +1,198 @@
+INFO 2016-08-01 19:46:58,678 signals: Student updated: AAAUU AAA (ID: 10)
+INFO 2016-08-02 07:37:19,453 signals: Student deleted: Джон Трівольта (ID: 12)
+ERROR 2016-08-02 07:45:31,084 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 107, in send_messages
+    sent = self._send(message)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 123, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "/usr/lib/python2.7/smtplib.py", line 731, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+SMTPSenderRefused: (530, '5.5.1 Authentication Required. Learn more at\n5.5.1  https://support.google.com/mail/answer/14257 q73sm236584lfg.17 - gsmtp', u'vevo5282@mail.ru')
+ERROR 2016-08-02 07:51:41,928 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 p128sm240033lfb.32 - gsmtp')
+ERROR 2016-08-02 07:52:05,395 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 107, in send_messages
+    sent = self._send(message)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 123, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "/usr/lib/python2.7/smtplib.py", line 731, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+SMTPSenderRefused: (530, '5.5.1 Authentication Required. Learn more at\n5.5.1  https://support.google.com/mail/answer/14257 90sm243915lfw.30 - gsmtp', u'vevo5282@mail.ru')
+ERROR 2016-08-02 07:53:28,907 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 90sm249025lfs.7 - gsmtp')
+ERROR 2016-08-02 07:53:47,111 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 y200sm247564lfd.12 - gsmtp')
+ERROR 2016-08-02 07:54:05,669 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 m17sm250325lfg.1 - gsmtp')
+ERROR 2016-08-02 07:54:14,471 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 g69sm239263lji.44 - gsmtp')
+ERROR 2016-08-02 07:54:24,076 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (534, '5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbtn\n5.7.14 SfuZX0DpBemuHVAoeFeacg3OxRTMSYXcYlABj-EOUT9bXnBK5vNp6Pu_dvRk67adtcumsq\n5.7.14 3WgbkdunBEUPXf8v5w8hbo_R-JeOHUoPJpfpj_O34zhwdGyEkDnAlmxd0Q2_e3S_nhc0NI\n5.7.14 U0TG2436GNuigQNnpzTe2hfUtOVkL68YWdZ2L6-amQUtBGh3IOcuWXEKdfynz__YgnyjoU\n5.7.14 gJoLEuyFyJpTC77FPcxchDmsdwZ7k> Please log in via your web browser and\n5.7.14 then try again.\n5.7.14  Learn more at\n5.7.14  https://support.google.com/mail/answer/78754 m62sm238523lfe.44 - gsmtp')
+ERROR 2016-08-02 07:54:41,824 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 l129sm235295lfl.37 - gsmtp')
+ERROR 2016-08-02 07:55:57,982 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 u21sm243677lja.18 - gsmtp')
+ERROR 2016-08-02 07:56:04,639 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 e22sm251923lji.1 - gsmtp')
+ERROR 2016-08-02 07:56:17,514 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 h13sm244143lji.33 - gsmtp')
+ERROR 2016-08-02 07:56:23,295 contact_admin: Під час відправки листа виникла непередбачувана помилка. Спробуйте скористатись даною формою пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 65, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 100, in send_messages
+    new_conn_created = self.open()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 67, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python2.7/smtplib.py", line 622, in login
+    raise SMTPAuthenticationError(code, resp)
+SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 q36sm248110lfi.26 - gsmtp')
+INFO 2016-08-02 08:34:40,017 signals: Group added: eeee (ID: 10)

@@ -46,3 +46,11 @@ if DEBUG:
         url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': MEDIA_ROOT})
     ]
+
+js_info_dict = {
+    'packages': ('my.package',),
+}
+
+urlpatterns += [
+    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
+]
