@@ -1,0 +1,7 @@
+*.pyc
+*.log
+*.json
+*~
+*.egg-info
+*.mo
+*.egg
