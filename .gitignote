@@ -1,0 +1,5 @@
+*.pyc
+*.json
+db.py
+*.log
+requirements.txt
