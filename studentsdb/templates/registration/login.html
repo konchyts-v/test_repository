@@ -1,0 +1,29 @@
+{% extends "students/base.html" %}
+
+{% load i18n %}
+
+{% block meta_title %}{% trans "Login" %}{% endblock meta_title %}
+
+{% block title %}{% trans "Login" %}{% endblock title %}
+
+{% block content %}
+<form>
+
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{% url "home" %}" />
+
+  <div>
+  	<label for="login">{% trans "Your Username" %}</label>
+  	<input type="text" class="form-control" id="login" value="" name="username" />
+  </div>
+
+  <div>
+  	<label for="login">{% trans "Your Password" %}</label>
+  	<input type="passwod" class="form-control" id="password" value="" name="password" />
+  </div>
+
+  <button type="submit" class="btn btn-primary">{% trans "Login" %}</button>
+  
+</form>
+
+{% endblock content %}

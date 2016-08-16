@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-09 18:47+0000\n"
+"POT-Creation-Date: 2016-08-16 19:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,41 +19,130 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: templates/students/base.html:8 templates/students/base.html:31
-#: templates/students/base.html:81
-msgid "Students Accounting Service"
-msgstr "Сервіс Обліку Студентів"
-
-#: templates/students/base.html:36
-msgid "Group:"
+#: models/group.py:10 models/student.py:50
+msgid "Group"
 msgstr "Група:"
 
-#: templates/students/base.html:38
-msgid "All Students"
-msgstr "Усі Студенти"
-
-#: templates/students/base.html:52 templates/students/students_list.html:6
-msgid "Students"
-msgstr "Студенти"
-
-#: templates/students/base.html:53 templates/students/students_list.html:69
-msgid "Journal"
-msgstr "Відвідування"
-
-#: templates/students/base.html:54
+#: models/group.py:11 templates/students/base.html:69
 msgid "Groups"
 msgstr "Групи"
 
-#: templates/students/base.html:55
+#: models/group.py:16
+msgid "Title"
+msgstr "Назва"
+
+#: models/group.py:19 templates/students/groups_list.html:30
+msgid "Leader"
+msgstr "Староста"
+
+#: models/group.py:26 models/student.py:47
+#: templates/students/students_add.html:97
+#: templates/students/students_edit.html:97
+msgid "Notes"
+msgstr "Додаткові нотатки"
+
+#: models/monthjournal.py:8
+msgid "Monthly Journal"
+msgstr "Місячний Журнал"
+
+#: models/monthjournal.py:9
+msgid "Monthly Journals"
+msgstr "Місячні Журнали"
+
+#: models/monthjournal.py:12 models/student.py:11
+#: templates/students/journal.html:40
+msgid "Student"
+msgstr "Студент"
+
+#: models/monthjournal.py:18
+msgid "Date"
+msgstr "Дата"
+
+#: models/student.py:12 templates/students/base.html:67
+#: templates/students/students_list.html:6
+msgid "Students"
+msgstr "Студенти"
+
+#: models/student.py:17
+msgid "Name"
+msgstr "Ім'я"
+
+#: models/student.py:22 templates/students/students_list.html:23
+msgid "Last Name"
+msgstr "Прізвище"
+
+#: models/student.py:27 templates/students/students_add.html:45
+#: templates/students/students_edit.html:45
+msgid "Middle Name"
+msgstr "По-батькові"
+
+#: models/student.py:32
+msgid "Birthday"
+msgstr "Дата народження"
+
+#: models/student.py:37 templates/students/students_add.html:65
+#: templates/students/students_edit.html:65
+#: templates/students/students_list.html:20
+msgid "Photo"
+msgstr "Фото"
+
+#: models/student.py:43
+msgid "Ticket"
+msgstr "№ Білету"
+
+#: templates/contact_admin/form.html:7 templates/contact_admin/form.html:21
+msgid "Contact Administrator"
+msgstr "Зв'язок із Адміністратором"
+
+#: templates/contact_admin/form.html:13 templates/students/groups_form.html:12
+#: templates/students/students_add.html:11
+#: templates/students/students_confirm_delete.html:12
+#: templates/students/students_edit.html:11
+msgid "Please, fix this errors"
+msgstr "Виправте, будь ласка, наступні помилки"
+
+#: templates/students/base.html:8 templates/students/base.html:31
+#: templates/students/base.html:95
+msgid "Students Accounting Service"
+msgstr "Сервіс Обліку Студентів"
+
+#: templates/students/base.html:37
+msgid "Group:"
+msgstr "Група:"
+
+#: templates/students/base.html:39
+msgid "All Students"
+msgstr "Усі Студенти"
+
+#: templates/students/base.html:49
+msgid "Logout"
+msgstr "Вийти"
+
+#: templates/students/base.html:56
+msgid "Login"
+msgstr "Ввійти"
+
+#: templates/students/base.html:57
+msgid "Register"
+msgstr "Зареєструватись"
+
+#: templates/students/base.html:68 templates/students/journal.html:6
+#: templates/students/journal.html:8 templates/students/students_list.html:69
+msgid "Journal"
+msgstr "Журнал Відвідування"
+
+#: templates/students/base.html:70
 msgid "Contact"
 msgstr "Контакт"
 
 #: templates/students/groups_confirm_delete.html:7
 #: templates/students/groups_confirm_delete.html:17
-#, fuzzy
-#| msgid "Delete"
 msgid "Delete Group"
-msgstr "Видалити"
+msgstr "Видалити Групу"
+
+#: templates/students/groups_confirm_delete.html:12
+msgid "Please, fix this error"
+msgstr "Виправте, будь ласка, наступні помилки"
 
 #: templates/students/groups_confirm_delete.html:23
 #, python-format
@@ -61,12 +150,162 @@ msgid "Do you really want to delete group: \"%(group)s\"?"
 msgstr "Ви дійсно хочете видалити групу: \"%(group)s\"?"
 
 #: templates/students/groups_confirm_delete.html:24
+#: templates/students/students_confirm_delete.html:24
 msgid "Yes"
 msgstr "Так"
 
 #: templates/students/groups_confirm_delete.html:26
+#: templates/students/students_confirm_delete.html:26
 msgid "No"
 msgstr "Ні"
+
+#: templates/students/groups_form.html:7
+#: templates/students/groups_form.html:17
+msgid "Group's Form"
+msgstr "Форма Групи"
+
+#: templates/students/groups_list.html:6 templates/students/groups_list.html:8
+msgid "Groups List"
+msgstr "Список Груп"
+
+#: templates/students/groups_list.html:13
+msgid "Add Group"
+msgstr "Додати Групу"
+
+#: templates/students/groups_list.html:36
+#: templates/students/students_list.html:44
+msgid "Actions"
+msgstr "Дії"
+
+#: templates/students/groups_list.html:44
+msgid "None"
+msgstr "Немає"
+
+#: templates/students/groups_list.html:48
+#: templates/students/students_list.html:64
+msgid "Action"
+msgstr "Дія"
+
+#: templates/students/groups_list.html:52
+#: templates/students/students_list.html:68
+msgid "Edit"
+msgstr "Редагувати"
+
+#: templates/students/groups_list.html:53
+#: templates/students/students_list.html:70
+msgid "Delete"
+msgstr "Видалити"
+
+#: templates/students/groups_list.html:62
+msgid "Groups are not found until in database."
+msgstr "Поки немає групи в списку"
+
+#: templates/students/journal.html:15
+msgid "Students is not found until in databae. Please "
+msgstr "Поки немає студентів у списку. Будь ласка "
+
+#: templates/students/journal.html:16
+msgid "add"
+msgstr "додайте "
+
+#: templates/students/journal.html:16
+msgid "the first."
+msgstr "першого."
+
+#: templates/students/journal.html:22
+msgid ""
+"Changes in the log are automatically saved every click a cell in the table."
+msgstr ""
+"Зміни в журналі зберігаються автоматично при кожному кліку в клітинці "
+"таблиці."
+
+#: templates/students/journal.html:23
+msgid "Saving..."
+msgstr "Йде збереження..."
+
+#: templates/students/journal.html:28
+msgid "Previous Month"
+msgstr "Попередній Місяць"
+
+#: templates/students/journal.html:31
+msgid "Next Month"
+msgstr "Наступний Місяць"
+
+#: templates/students/students_add.html:25
+#: templates/students/students_edit.html:25
+msgid "Name*"
+msgstr "Ім'я*"
+
+#: templates/students/students_add.html:29
+msgid "Enter your Name"
+msgstr "Введіть ваше ім'я"
+
+#: templates/students/students_add.html:35
+#: templates/students/students_edit.html:35
+msgid "Last Name*"
+msgstr "Прізвище*"
+
+#: templates/students/students_add.html:39
+#: templates/students/students_edit.html:39
+msgid "Enter your Last Name"
+msgstr "Введіть ваше Прізвище"
+
+#: templates/students/students_add.html:49
+#: templates/students/students_edit.html:49
+msgid "Enter your Middle Name"
+msgstr "Введіть ваше По-батькові"
+
+#: templates/students/students_add.html:55
+#: templates/students/students_edit.html:55
+msgid "Birthday*"
+msgstr "Дата народження*"
+
+#: templates/students/students_add.html:59
+#: templates/students/students_edit.html:59
+msgid "Exmp. 1984-10-10"
+msgstr "Нарп. 1984-10-10"
+
+#: templates/students/students_add.html:74
+#: templates/students/students_edit.html:74
+msgid "Ticket*"
+msgstr "№ Білету*"
+
+#: templates/students/students_add.html:78
+#: templates/students/students_edit.html:78
+msgid "Enter your ticket number"
+msgstr "Введіть номер вашого білету"
+
+#: templates/students/students_add.html:84
+#: templates/students/students_edit.html:84
+msgid "Group*"
+msgstr "Група*"
+
+#: templates/students/students_add.html:88
+#: templates/students/students_edit.html:88
+msgid "Enter the group"
+msgstr "Виберіть групу"
+
+#: templates/students/students_add.html:101
+#: templates/students/students_edit.html:101
+msgid "Enter the information about yourself"
+msgstr "Введіть додаткову інформацію про себе"
+
+#: templates/students/students_add.html:108 views/groups.py:65
+msgid "Add"
+msgstr "Додати"
+
+#: templates/students/students_add.html:111 views/groups.py:72
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: templates/students/students_confirm_delete.html:7
+#: templates/students/students_confirm_delete.html:17
+msgid "Delete Student"
+msgstr "Видалити Студента"
+
+#: templates/students/students_confirm_delete.html:23
+msgid "Do you really want delete this student?"
+msgstr "Ви дійсно хочете видалити цього студента?"
 
 #: templates/students/students_list.html:8
 msgid "Students List"
@@ -76,14 +315,6 @@ msgstr "Список Студентів"
 msgid "Add Student"
 msgstr "Додати Студенти"
 
-#: templates/students/students_list.html:20
-msgid "Photo"
-msgstr "Фото"
-
-#: templates/students/students_list.html:23
-msgid "Last Name"
-msgstr "Прізвище"
-
 #: templates/students/students_list.html:32
 msgid "First Name"
 msgstr "Ім'я"
@@ -92,18 +323,94 @@ msgstr "Ім'я"
 msgid "Ticket #"
 msgstr "№ Білету"
 
-#: templates/students/students_list.html:44
-msgid "Actions"
-msgstr "Дії"
+#: views/contact_admin.py:39
+msgid "Send"
+msgstr "Надіслати"
 
-#: templates/students/students_list.html:64
-msgid "Action"
-msgstr "Дія"
+#: views/contact_admin.py:42
+msgid "Your e-mail"
+msgstr "Ваша email адреса"
 
-#: templates/students/students_list.html:68
-msgid "Edit"
-msgstr "Редагувати"
+#: views/contact_admin.py:45
+msgid "Title of the message"
+msgstr "Заголовок"
 
-#: templates/students/students_list.html:70
-msgid "Delete"
-msgstr "Видалити"
+#: views/contact_admin.py:49
+msgid "Message"
+msgstr "Повідомлення"
+
+#: views/contact_admin.py:70
+msgid "There was an error on the server. Please, try again a bit later."
+msgstr "На сервері виникла помилка. Будь ласка, спробуйте пізніше."
+
+#: views/contact_admin.py:74
+msgid "Message was sended successfully"
+msgstr "Повідомлення успішно надіслано!"
+
+#: views/groups.py:68
+msgid "Save"
+msgstr "Зберегти"
+
+#: views/groups.py:79
+msgid "Changes saved successfully"
+msgstr "Зміни успішно збережені"
+
+#: views/groups.py:85
+msgid "Changes were canceled"
+msgstr "Зміни було скасовано"
+
+#: views/students.py:59 views/students.py:152
+msgid "First Name field is required"
+msgstr "Ім'я є обов'язковим"
+
+#: views/students.py:65 views/students.py:156
+msgid "Last Name field is required"
+msgstr "Прізвище є обов'язковим"
+
+#: views/students.py:71 views/students.py:160
+msgid "Birthday field is required"
+msgstr "Дата народження є обов'язковою"
+
+#: views/students.py:76 views/students.py:165
+msgid "Enter the corrent type of date"
+msgstr "Введіть коректний формат дати"
+
+#: views/students.py:82 views/students.py:169
+msgid "Ticket number is reuired"
+msgstr "№ Білету є обов'язковим"
+
+#: views/students.py:88 views/students.py:173
+msgid "Check the group and student"
+msgstr "Виберіть групу та студента"
+
+#: views/students.py:92 views/students.py:177
+msgid "Check the correct group"
+msgstr "Виберіть коректну групу"
+
+#: views/students.py:104 views/students.py:187
+msgid "Photo size larger than 2 MB"
+msgstr "Розмір фото перевищує 2 мб"
+
+#: views/students.py:106 views/students.py:189
+msgid "Check correct format of photo"
+msgstr "Виберіть коректний формат фото"
+
+#: views/students.py:115
+msgid "Student added successfully!"
+msgstr "Студента успішно додано!"
+
+#: views/students.py:125 views/students.py:223
+msgid "Student added was canceled!"
+msgstr "Додавання студента скасовано!"
+
+#: views/students.py:137
+msgid "Student is not found"
+msgstr "Студента немає в базі"
+
+#: views/students.py:203
+msgid "Student is leader of other group"
+msgstr "Студент є старостою іншої групи"
+
+#: views/students.py:212 views/students.py:234
+msgid "Student updated successfully!"
+msgstr "Студента успішно редаговано!"

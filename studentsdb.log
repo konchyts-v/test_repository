@@ -196,3 +196,36 @@ Traceback (most recent call last):
     raise SMTPAuthenticationError(code, resp)
 SMTPAuthenticationError: (535, '5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/answer/14257 q36sm248110lfi.26 - gsmtp')
 INFO 2016-08-02 08:34:40,017 signals: Group added: eeee (ID: 10)
+ERROR 2016-08-14 10:03:53,572 contact_admin: На сервері виникла помилка. Будь ласка, спробуйте пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 69, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 107, in send_messages
+    sent = self._send(message)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 123, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "/usr/lib/python2.7/smtplib.py", line 731, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+SMTPSenderRefused: (530, '5.5.1 Authentication Required. Learn more at\n5.5.1  https://support.google.com/mail/answer/14257 h30sm2837875lji.39 - gsmtp', u'vevo5282@mail.ru')
+ERROR 2016-08-16 10:07:36,997 contact_admin: На сервері виникла помилка. Будь ласка, спробуйте пізніше.
+Traceback (most recent call last):
+  File "/media/vitaliy/E6F49B8CF49B5E1D/Programming/home/vitaliy/djcode/src/studentsdb/students/views/contact_admin.py", line 68, in contact_admin
+    send_mail(subject, message, from_email, [ADMIN_EMAIL])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/__init__.py", line 61, in send_mail
+    return mail.send()
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/message.py", line 292, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 107, in send_messages
+    sent = self._send(message)
+  File "/usr/local/lib/python2.7/dist-packages/Django-1.9.6-py2.7.egg/django/core/mail/backends/smtp.py", line 123, in _send
+    self.connection.sendmail(from_email, recipients, message.as_bytes(linesep='\r\n'))
+  File "/usr/lib/python2.7/smtplib.py", line 731, in sendmail
+    raise SMTPSenderRefused(code, resp, from_addr)
+SMTPSenderRefused: (530, '5.5.1 Authentication Required. Learn more at\n5.5.1  https://support.google.com/mail/answer/14257 192sm693726ljf.17 - gsmtp', u'vevo5282@mail.ru')
+INFO 2016-08-16 10:07:44,376 signals: Group updated: eeee (ID: 10)
+INFO 2016-08-16 10:08:17,418 signals: Student deleted: Sheva Combo (ID: 5)
+INFO 2016-08-16 10:27:38,739 signals: Student added: vas vas (ID: 21)

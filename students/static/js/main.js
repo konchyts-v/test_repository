@@ -33,7 +33,7 @@ function initGroupSelector() {
 	// on field "change" event
 	$('#group-selector select').change(function(event){
 		// get value of currently selected group option
-		var group = $(this).val()
+		var group = $(this).val();
 
 		if(group) {
 			// set cookie with expiration date 1 year since now;
@@ -50,6 +50,23 @@ function initGroupSelector() {
 		return true;
 	});
 }
+
+/*function initLanguageSelector() {
+
+	$('#language-selector select').change(function(event){
+
+		var language = $(this).val();
+
+
+		if(language) {
+			$.cookie('user_language', language, {'path': '/', 'expires': 365});
+		} else {
+			$.removeCookie('user_language', {'path': '/'});
+		}
+		location.reload(true);
+		return true;
+	})
+}*/
 
 function initDateFields() {
 	$('input.dateinput').datetimepicker({
@@ -74,7 +91,7 @@ function initEditStudentPage(){
 			'success': function(data, status, xhr){
 				// check if we got successfull response from the server
 				if (status != 'success') {
-					alert('Помилка на сервері. Спробуйте, будь ласка, пізніше.');
+					alert(gettext('There was an error on the server. Please, try again a bit later.'));
 					return false;
 				}
 
@@ -97,7 +114,7 @@ function initEditStudentPage(){
 				loading.hide();
 			},
 			'error': function(){
-				alert('Помилка на сервері. Спробуйте, будь ласка, пізніше.');
+				alert(gettext('There was an error on the server. Please, try again a bit later.'));
 				return false;
 			}
 		});
@@ -126,7 +143,7 @@ function initEditStudentForm(form, modal) {
 			$('input').prop("disabled", true);
 		},
 		'error': function(){
-			alert('Помилка на сервері. Спробуйте, будь ласка, пізніше.');
+			alert(gettext('There was an error on the server. Please, try again a bit later.'));
 			return false;
 		},
 		'success': function(data, status, xhr) {
@@ -170,7 +187,7 @@ function initCreateStudentPage(){
 			'success': function(data, status, xhr){
 				// check if we got successfull response from the server
 				if (status != 'success') {
-					alert('Помилка на сервері. Спробуйте, будь ласка, пізніше.');
+					alert(gettext('There was an error on the server. Please, try again a bit later.'));
 					return false;
 				}
 
@@ -193,7 +210,7 @@ function initCreateStudentPage(){
 				loading.hide();
 			},
 			'error': function(){
-				alert('Помилка на сервері. Спробуйте, будь ласка, пізніше.');
+				alert(gettext('There was an error on the server. Please, try again a bit later.'));
 				return false;
 			}
 		});
@@ -222,7 +239,7 @@ function initCreateStudentForm(form, modal) {
 			$('input').prop("disabled", true);
 		},
 		'error': function(){
-			alert('Помилка на сервері. Спробуйте, будь ласка, пізніше.');
+			alert(gettext('There was an error on the server. Please, try again a bit later.'));
 			return false;
 		},
 		'success': function(data, status, xhr) {
@@ -254,6 +271,7 @@ function initCreateStudentForm(form, modal) {
 $(document).ready(function(){
 	initJournal();
 	initGroupSelector();
+	//initLanguageSelector();
 	initDateFields();
 	initEditStudentPage();
 	initCreateStudentPage();

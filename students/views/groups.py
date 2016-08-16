@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
@@ -7,6 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.forms import ModelForm
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views.generic import CreateView, UpdateView, DeleteView
+from django.utils.translation import ugettext as _
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -14,7 +13,6 @@ from crispy_forms.bootstrap import FormActions
 
 from ..models.group import Group
 from ..util import paginate
-
 
 def groups_list(request):
     groups = Group.objects.all().order_by('title')
@@ -28,8 +26,9 @@ def groups_list(request):
 
     #paginate groups
     context = paginate(groups, 3, request, {}, var_name="groups")
-            
+    
     return render(request, 'students/groups_list.html', context)
+    
 
 class GroupForm(ModelForm):
     class Meta:
@@ -63,27 +62,27 @@ class GroupForm(ModelForm):
 
         # add buttons
         if add_form:
-            submit = Submit('add_button', u'Додати',
+            submit = Submit('add_button', _(u"Add"),
                 css_class="btn btn-primary")
         else:
-            submit = Submit('save_button', u'Зберегти',
+            submit = Submit('save_button', _(u"Save"),
                 css_class="btn btn-primary")
         self.helper.layout[-1] = FormActions(
             submit,
-            Submit('cancel_button', u'Скасувати', css_class="btn btn-link"),
+            Submit('cancel_button', _(u"Cancel"), css_class="btn btn-link"),
         )
 
 class BaseGroupFormView(object):
 
     def get_success_url(self):
-        return u'%s?status_message=Зміни успішно збережено!' \
-            % reverse('groups')
+        return u'%s?status_message=%s' \
+            % (reverse('groups'), _(u"Changes saved successfully"))
 
     def post(self, request, *args, **kwargs):
         # handle cancel button
         if request.POST.get('cancel_button'):
             return HttpResponseRedirect(reverse('groups') +
-                u'?status_message=Зміни скасовано.')
+                u'?status_message=%s' % _(u"Changes were canceled"))
         else:
             return super(BaseGroupFormView, self).post(
                 request, *args, **kwargs)

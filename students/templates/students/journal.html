@@ -1,34 +1,34 @@
 {% extends "students/base.html" %}
 
+{% load i18n %}
 {% load staticfiles %}
 
-{% block meta_title %}Облік Відвідування{% endblock meta_title %}
+{% block meta_title %}{% trans "Journal" %}{% endblock meta_title %}
 
-{% block title %}Облік Відвідування{% endblock title %}
+{% block title %}{% trans "Journal" %}{% endblock title %}
 
 {% block content %}
 
 {% if not students %}
 
 <div class="alert alert-warning" role="alert">
-  Поки немає жодного студента в базі. Будь ласка, 
-  <a href="{% url "students_add" %}">додайте</a> першого.
+  {% trans "Students is not found until in databae. Please " %} 
+  <a href="{% url "students_add" %}">{% trans "add" %}</a> {% trans "the first." %}
 </div>
 
 {% else %}
 
 <div class="alert alert-warning">
-	Зміни в журналі зберігаються автоматично при кожному кліку в клітинці таблиці.
-	<span id="ajax-progress-indicator">Йде збереження...</span>
+	{% trans "Changes in the log are automatically saved every click a cell in the table." %}
+	<span id="ajax-progress-indicator">{% trans "Saving..." %}</span>
 </div>
 
 <p id="journal-nav" class="text-center">
   <a href="?month={{ prev_month }}"
-     title="Попередній Місяць">&larr;</a>
-  <!-- TODO: translate month name -->
-  <strong>{{ month_verbose }} {{ year }}</strong>
+     title="{% trans "Previous Month" %}">&larr;</a>
+  <strong>{% trans month_verbose %} {{ year }}</strong>
   <a href="?month={{ next_month }}"
-     title="Наступний Місяць">&rarr;</a>
+     title="{% trans "Next Month" %}">&rarr;</a>
 </p>
 
 <table class="table table-hover table-striped table-bordered"
@@ -37,11 +37,10 @@
   <thead>
     <tr class="header">
       <th class="num">#</th>
-      <th class="name">Студент</th>
+      <th class="name">{% trans "Student" %}</th>
       {% for day in month_header %}
       <th class="day-header">
-        <!-- TODO: transalte day name -->
-        {{ day.verbose }}
+        {% trans day.verbose %}
         <br />
         {{ day.day }}
       </th>
