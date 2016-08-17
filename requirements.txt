@@ -3,4 +3,4 @@ Pillow
 MySQL-python
 django-crispy-forms==1.4.0
 python-dateutil
-django-refistration-redux==1.2
+django-refistration-redux==1.4
