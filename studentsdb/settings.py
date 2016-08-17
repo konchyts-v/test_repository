@@ -192,3 +192,7 @@ LOGGING = {
 
 # for the django-registration
 REGISTRATION_OPEN = True
+
+# new url for redirect
+LOGIN_URL = 'users:auth_login'
+LOGOUT_URL = 'users:auth_logout'

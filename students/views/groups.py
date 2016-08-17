@@ -6,6 +6,8 @@ from django.forms import ModelForm
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.utils.translation import ugettext as _
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -92,11 +94,23 @@ class GroupAddView(BaseGroupFormView, CreateView):
     form_class = GroupForm
     template_name = 'students/groups_form.html'
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(StudentDeleteView, self).dispatch(*args, **kwargs)    
+
 class GroupUpdateView(BaseGroupFormView, UpdateView):
     model = Group
     form_class = GroupForm
     template_name = 'students/groups_form.html'
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(StudentDeleteView, self).dispatch(*args, **kwargs)
+
 class GroupDeleteView(BaseGroupFormView, DeleteView):
     model = Group
     template_name = 'students/groups_confirm_delete.html'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(StudentDeleteView, self).dispatch(*args, **kwargs)

@@ -45,7 +45,7 @@
         </div>
         <!-- User's toolbar for authenticated users -->
         <div class="col-xs-2" id="user-toolbar">
-          <span>{{ user.username }}</span> |
+          <span>{% if user.first_name and user.last_name %} {{ user.first_name }} {{ user.last_name }} {% else %} {{ user.username }} {% endif %}</span> |
           <a href="{% url "users:auth_logout" %}">{% trans "Logout" %}</a>
         </div>
 

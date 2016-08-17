@@ -8,6 +8,8 @@ from django.forms import ModelForm
 from django.views.generic import UpdateView, DeleteView
 from django.utils.translation import ugettext as _
 from django.utils.translation import activate
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -41,6 +43,7 @@ def students_list(request):
     
     return render(request, 'students/students_list.html', context)
 
+@login_required
 def students_add(request):
     # was form posted?
     if request.method == "POST":
@@ -128,7 +131,7 @@ def students_add(request):
         return render(request, 'students/students_add.html',
             {'groups': Group.objects.all().order_by('title')})
 
-
+@login_required
 def students_edit(request, pk):
     # was form posted?
     try:
@@ -229,6 +232,10 @@ def students_edit(request, pk):
 class StudentDeleteView(DeleteView):
     model = Student
     template_name = 'students/students_confirm_delete.html'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(StudentDeleteView, self).dispatch(*args, **kwargs)
 
     def get_success_url(self):
         return  u'%s?status_message=%s' % (reverse('home'), _(u"Student updated successfully!"))
