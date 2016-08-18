@@ -6,13 +6,16 @@ from django.http import JsonResponse
 from django.core.urlresolvers import reverse
 from django.views.generic.base import TemplateView
 
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+
 from ..models.student import Student
 from ..models.monthjournal import MonthJournal
 from ..util import paginate, get_current_group
 
 
 class JournalView(TemplateView):
-	template_name = 'students/journal.html'
+	template_name = 'students/journal.html'    
 
 	def get_context_data(self, **kwargs):
 		# get context data grom TemplateView class

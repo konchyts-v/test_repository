@@ -17,10 +17,14 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from .settings import MEDIA_ROOT, DEBUG
 from students.views.students import StudentDeleteView
-from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView
+from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView, groups_list
 from students.views.journal import JournalView
+
 from django.contrib.auth import views as auth_views
-from django.views.generic.base import RedirectView
+from django.contrib.auth.decorators import login_required
+
+from django.views.generic.base import RedirectView, TemplateView
+
 
 urlpatterns = [
 	# Students urls
@@ -30,19 +34,20 @@ urlpatterns = [
     url(r'^students/(?P<pk>\d+)/delete/$', StudentDeleteView.as_view(), name='students_delete'),
     
     # Groups urls
-    url(r'^groups/$', 'students.views.groups.groups_list', name='groups'),
-    url(r'^groups/add/$', GroupAddView.as_view(), name='groups_add'),
-    url(r'^groups/(?P<pk>\d+)/edit/$', GroupUpdateView.as_view(), name='groups_edit'),
-    url(r'^groups/(?P<pk>\d+)/delete/$', GroupDeleteView.as_view(), name='groups_delete'),
+    url(r'^groups/$', login_required(groups_list), name='groups'),
+    url(r'^groups/add/$', login_required(GroupAddView.as_view()), name='groups_add'),
+    url(r'^groups/(?P<pk>\d+)/edit/$', login_required(GroupUpdateView.as_view()), name='groups_edit'),
+    url(r'^groups/(?P<pk>\d+)/delete/$', login_required(GroupDeleteView.as_view()), name='groups_delete'),
     
     url(r'^admin/', include(admin.site.urls)),
 
     # Contact Admin Form
     url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
     # Journal Page
-    url(r'^journal/(?P<pk>\d+)?/?$', JournalView.as_view(), name='journal'),
+    url(r'^journal/(?P<pk>\d+)?/?$', login_required(JournalView.as_view()), name='journal'),
 
     # User Related urls
+    url(r'^users/profile/$', login_required(TemplateView.as_view(template_name='registration/profile.html')), name='profile'),
     url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'home'},
         name='auth_logout'),
     url(r'^register/complete/$', RedirectView.as_view(pattern_name='home'),
