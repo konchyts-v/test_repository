@@ -45,17 +45,19 @@
         </div>
         <!-- User's toolbar for authenticated users -->
         <div class="col-xs-2" id="user-toolbar">
-          <a href="{% url "profile" %}">{{ user.get_full_name|default:user.username }}</a> |
-          <a href="{% url "users:auth_logout" %}">{% trans "Logout" %}</a>
+          <a class="log_text" href="{% url "profile" %}">{{ user.get_full_name|default:user.username }}</a> |
+          <a class="log_text" href="{% url "users:auth_logout" %}">{% trans "Logout" %}</a>
         </div>
 
         {% else %}
 
         <!-- User's toolbar for anonymous users -->
         <div class="col-xs-6" id="user-toolbar">
-          <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">{% trans "via Facebook" %}</a> |
-          <a href="{% url "users:auth_login" %}">{% trans "Login" %}</a> |
-          <a href="{% url "users:registration_register" %}">{% trans "Register" %}</a>
+          <a  class="icon_log" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}">
+            <img height="30" width="30" src="{% static "img/facebook.jpg" %}">
+          </a> |
+          <a class="log_text" href="{% url "users:auth_login" %}">{% trans "Login" %}</a> |
+          <a class="log_text" href="{% url "users:registration_register" %}">{% trans "Register" %}</a>
         </div>
         {% endif %}
       </div>

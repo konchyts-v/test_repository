@@ -14,6 +14,9 @@
 
 {% block content %}
 
+<a class="btn btn-primary edit_profile" href="{% url "profile" %}">{% trans "Profile" %}</a>
+<a class="btn btn-primary edit_profile" href="#">{% trans "Edit" %}</a>
+
 <table class="table table-striped">
   
   {% if user.email %}
@@ -43,6 +46,28 @@
       <td>{{ user.stprofile.mobile_phone }}</td>
     </tr>
   {% endif %}
+
+  {% if user.stprofile.address %}
+    <tr>
+      <td>{% trans "Address" %}</td>
+      <td>{{ user.stprofile.address }}</td>
+    </tr>
+  {% endif %}
+
+  {% if user.stprofile.passport_number %}
+    <tr>
+      <td>{% trans "Passport number" %}</td>
+      <td>{{ user.stprofile.passport_number }}</td>
+    </tr>
+  {% endif %}
+
+  {% if user.stprofile.photo %}
+    <tr>
+      <td>{% trans "Photo" %}</td>
+      <td><img height=150 width=120 src="{{ user.stprofile.photo.url }}"></td>
+    </tr>
+  {% endif %}
+
 
 </table>
 

@@ -18,5 +18,22 @@ class StProfile(models.Model):
 		verbose_name=_(u"Mobile Phone"),
 		default='')
 
+	address = models.CharField(
+		max_length=25,
+		blank=True,
+		verbose_name=_(u"Address"),
+		default='')
+
+	passport_number = models.CharField(
+		max_length=15,
+		blank=True,
+		verbose_name=_(u"Passport number"),
+		default='')
+
+	photo = models.ImageField(
+		blank=True,
+		verbose_name=_(u"Photo"),
+		null=True)
+
 	def __unicode__(self):
 		return self.user.username

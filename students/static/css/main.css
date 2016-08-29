@@ -68,3 +68,16 @@ th.day-header {
   margin-top: 30px;
   text-align: right;
 }
+
+.edit_profile {
+  margin-bottom: 10px;
+  margin-right: 7px;
+}
+
+.log_text {
+  font-size: 18px;
+}
+
+.icon_log {
+  margin-bottom: 10px;
+}
