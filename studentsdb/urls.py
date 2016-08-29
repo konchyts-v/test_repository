@@ -54,6 +54,9 @@ urlpatterns = [
         name='registration_complete'),
     url(r'^users/', include('registration.backends.simple.urls',
         namespace='users')),
+
+    # Social Auth Related urls
+    url('^social/', include('social.apps.django_app.urls', namespace='social')),
 ]
 
 if DEBUG:
