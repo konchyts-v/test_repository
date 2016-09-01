@@ -15,7 +15,7 @@
 {% block content %}
 
 <a class="btn btn-primary edit_profile" href="{% url "profile" %}">{% trans "Profile" %}</a>
-<a class="btn btn-primary edit_profile" href="#">{% trans "Edit" %}</a>
+<a class="btn btn-primary edit_profile" href="{% url "edit_profile" user.id %}">{% trans "Edit" %}</a>
 
 <table class="table table-striped">
   
