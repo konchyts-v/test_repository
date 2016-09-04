@@ -19,7 +19,7 @@ from .settings import MEDIA_ROOT, DEBUG
 from students.views.students import StudentDeleteView
 from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView, groups_list
 from students.views.journal import JournalView
-from views import ProfileUpdateView
+from views import ProfileUpdateView, profile_page, users_list
 
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
@@ -49,6 +49,8 @@ urlpatterns = [
 
     # User Related urls
     url(r'^users/profile/$', login_required(TemplateView.as_view(template_name='registration/profile.html')), name='profile'),
+    url(r'^users/profile/(?P<pk>\d+)/$', login_required(profile_page), name='profile_page'),
+    url(r'^users/users_list/$',login_required(users_list), name='users_list'),
     url(r'^users/(?P<pk>\d+)/edit_profile/$', login_required(ProfileUpdateView.as_view()), name='edit_profile'),
     url(r'^users/logout/$', auth_views.logout, kwargs={'next_page': 'home'},
         name='auth_logout'),

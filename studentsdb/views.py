@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth import models
 from django.forms import ModelForm
 
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, TemplateView
 
 from django.utils.translation import ugettext as _
 from django.utils.translation import ugettext_lazy
@@ -13,12 +13,14 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
+from students.util import paginate
+
 class EditForm(ModelForm):
 
 	class Meta:
 		model = models.User
-		fields = ['email', 'username', 'first_name', 'last_name'] 
-
+		exclude = ['password', 'last_login', 'is_superuser', 'groups', 'user_permissions', 'is_staff', 'is_active']
+		#fields = ['email', 'username']
 	def __init__(self, *args, **kwargs):
 		# call original initializator
 		super(EditForm, self).__init__(*args, **kwargs)
@@ -74,3 +76,27 @@ class ProfileUpdateView(BaseProfileFormView, UpdateView):
 	model = models.User
 	form_class = EditForm
 	template_name = 'registration/edit_profile.html'
+
+def profile_page(request, pk):
+	# 
+	try:
+		user = models.User.objects.get(pk=pk)
+	except models.User.DoesNotExist:
+		return HttpResponseRedirect(u'%s?status_message=%s' % (reverse('home'), _(u"User is not found")))
+	return render(request, 'registration/profile.html', {'user': user})
+
+def users_list(request):
+	# get list of users
+	users = models.User.objects.all()
+
+	# try to order users list
+	order_by = request.GET.get('order_by', '')
+	if order_by in ('username',):
+		users = users.order_by(order_by)
+		if request.GET.get('reverse', '') == '1':
+			users = users.reverse()
+
+	# paginate users
+	context = paginate(users, 10, request, {}, var_name='users')
+
+	return render(request, 'registration/users_list.html', context)

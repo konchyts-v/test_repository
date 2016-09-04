@@ -8,12 +8,14 @@
 {% block title %}{% trans "Groups List" %}{% endblock title %}
 
 {% block content %}
+	{% with order_by=request.GET.order_by reverse=request.GET.reverse %}
 		  {% if groups %}
           <!-- Add Student Button -->
           <a class="btn btn-primary" href="{% url 'groups_add' %}">{% trans "Add Group" %}</a>
 
           <!-- Start Students Listing -->
 		  <table class="table table-hover table-striped">
+		  
 		    <thead>
 			  <tr>
 				<th> <a href="">№</a></th>
@@ -61,8 +63,9 @@
 		  {% else %}
 		  <p>{% trans "Groups are not found until in database." %}</p>
 		  {% endif %}
-			{% with object_list=groups %}
-  				{% include "students/pagination.html" %}
-			{% endwith %}
+		  {% with object_list=groups %}
+  			{% include "students/pagination.html" %}
+  		  {% endwith %}
+	{% endwith %}
 		  <!-- End Students Listing -->
-		  {% endblock content %}
+{% endblock content %}

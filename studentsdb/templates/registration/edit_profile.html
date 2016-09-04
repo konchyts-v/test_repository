@@ -18,6 +18,10 @@
 
 {% block content %}
 
+<a class="btn btn-primary edit_profile" href="{% url "profile" %}">{% trans "Profile" %}</a>
+<a class="btn btn-primary edit_profile" href="{% url "edit_profile" user.id %}">{% trans "Edit" %}</a>
+<a class="btn btn-primary edit_profile" href="{% url "users_list" %}">{% trans "Users List" %}</a>
+
 {% crispy form %}
 
 {% endblock content %}
