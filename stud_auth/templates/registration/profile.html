@@ -1,0 +1,75 @@
+{% extends "students/base.html" %}
+
+{% load i18n %}
+
+{% block meta_title %}{{ user.get_full_name|default:user.username }}{% endblock meta_title %}
+
+{% block title %}{{ user.get_full_name|default:user.username }}{% endblock title %}
+
+{% block status_message %}
+{% if form.errors %}
+  <div class="alert alert-warning" role="alert">{% trans "Please, correct the following errors." %} {{ form.non_field_errors }}</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<a class="btn btn-primary edit_profile" href="{% url "profile" %}">{% trans "Profile" %}</a>
+<a class="btn btn-primary edit_profile" href="{% url "edit_profile" user.id %}">{% trans "Edit" %}</a>
+<a class="btn btn-primary edit_profile" href="{% url "users_list" %}">{% trans "Users List" %}</a>
+
+<table class="table table-striped">
+  
+  {% if user.email %}
+  <tr>
+    <td>{% trans "Email" %}</td>
+    <td>{{ user.email }}</td>
+  </tr>
+  {% endif %}
+
+  {% if user.username %}
+  <tr>
+    <td>{% trans "Username" %}</td>
+    <td>{{ user.username }}</td>
+  </tr>
+  {% endif %}
+
+  {% if user.date_joined %}
+  <tr>
+    <td>{% trans "Joined" %}</td>
+    <td>{{ user.date_joined }}</td>
+  </tr>
+  {% endif %}
+
+  {% if user.stprofile.mobile_phone %}
+    <tr>
+      <td>{% trans "Mobile Phone" %}</td>
+      <td>{{ user.stprofile.mobile_phone }}</td>
+    </tr>
+  {% endif %}
+
+  {% if user.stprofile.address %}
+    <tr>
+      <td>{% trans "Address" %}</td>
+      <td>{{ user.stprofile.address }}</td>
+    </tr>
+  {% endif %}
+
+  {% if user.stprofile.passport_number %}
+    <tr>
+      <td>{% trans "Passport number" %}</td>
+      <td>{{ user.stprofile.passport_number }}</td>
+    </tr>
+  {% endif %}
+
+  {% if user.stprofile.photo %}
+    <tr>
+      <td>{% trans "Photo" %}</td>
+      <td><img height=150 width=120 src="{{ user.stprofile.photo.url }}"></td>
+    </tr>
+  {% endif %}
+
+
+</table>
+
+{% endblock content %}

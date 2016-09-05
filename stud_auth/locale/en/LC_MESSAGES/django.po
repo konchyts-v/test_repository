@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-05 16:38+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:12
+msgid "User Profile"
+msgstr ""
+
+#: models.py:18 templates/registration/profile.html:46
+msgid "Mobile Phone"
+msgstr ""
+
+#: models.py:24 templates/registration/profile.html:53
+msgid "Address"
+msgstr ""
+
+#: models.py:30 templates/registration/profile.html:60
+msgid "Passport number"
+msgstr ""
+
+#: models.py:35 templates/registration/profile.html:67
+#: templates/registration/users_list.html:21
+msgid "Photo"
+msgstr ""
+
+#: templates/registration/edit_profile.html:7
+#: templates/registration/edit_profile.html:17
+msgid "Edit Profile"
+msgstr ""
+
+#: templates/registration/edit_profile.html:12
+msgid "Please, fix this errors"
+msgstr ""
+
+#: templates/registration/edit_profile.html:21
+#: templates/registration/profile.html:17
+#: templates/registration/users_list.html:12
+msgid "Profile"
+msgstr ""
+
+#: templates/registration/edit_profile.html:22
+#: templates/registration/profile.html:18
+#: templates/registration/users_list.html:13
+msgid "Edit"
+msgstr ""
+
+#: templates/registration/edit_profile.html:23
+#: templates/registration/profile.html:19
+#: templates/registration/users_list.html:6
+#: templates/registration/users_list.html:8
+#: templates/registration/users_list.html:14
+msgid "Users List"
+msgstr ""
+
+#: templates/registration/login.html:5 templates/registration/login.html:7
+#: templates/registration/login.html:39
+msgid "Login"
+msgstr ""
+
+#: templates/registration/login.html:15 templates/registration/profile.html:11
+#: templates/registration/registration_form.html:11
+msgid "Please, correct the following errors."
+msgstr ""
+
+#: templates/registration/login.html:28
+#: templates/registration/registration_form.html:22
+msgid "Your Username"
+msgstr ""
+
+#: templates/registration/login.html:34
+#: templates/registration/registration_form.html:34
+msgid "Your Password"
+msgstr ""
+
+#: templates/registration/profile.html:25
+msgid "Email"
+msgstr ""
+
+#: templates/registration/profile.html:32
+#: templates/registration/users_list.html:24
+msgid "Username"
+msgstr ""
+
+#: templates/registration/profile.html:39
+msgid "Joined"
+msgstr ""
+
+#: templates/registration/registration_form.html:5
+#: templates/registration/registration_form.html:7
+msgid "Register Form"
+msgstr ""
+
+#: templates/registration/registration_form.html:28
+msgid "Your Email"
+msgstr ""
+
+#: templates/registration/registration_form.html:40
+msgid "Confirm Password"
+msgstr ""
+
+#: templates/registration/registration_form.html:45
+msgid "Register"
+msgstr ""
+
+#: templates/registration/users_list.html:31
+msgid "First Name"
+msgstr ""
+
+#: templates/registration/users_list.html:32
+msgid "Last Name"
+msgstr ""
+
+#: views.py:53
+msgid "Save"
+msgstr ""
+
+#: views.py:56
+msgid "Cancel"
+msgstr ""
+
+#: views.py:64
+msgid "Changes saved successfully"
+msgstr ""
+
+#: views.py:70
+msgid "Changes were canceled"
+msgstr ""
+
+#: views.py:85
+msgid "User is not found"
+msgstr ""

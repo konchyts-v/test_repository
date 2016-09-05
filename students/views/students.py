@@ -10,6 +10,8 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import activate
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.utils import translation
+from django.conf import settings
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
@@ -40,9 +42,14 @@ def students_list(request):
 
     # paginate students
     context = paginate(students, 3, request, {}, var_name='students')
-    
-    return render(request, 'students/students_list.html', context)
 
+    #user_language = 'uk'
+    #translation.activate(user_language)
+    
+    response = render(request, 'students/students_list.html', context)
+    #response.set_cookie(settings.LANGUAGE_COOKIE_NAME, user_language)
+    return response
+    
 @login_required
 def students_add(request):
     # was form posted?

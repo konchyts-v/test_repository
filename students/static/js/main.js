@@ -51,22 +51,26 @@ function initGroupSelector() {
 	});
 }
 
-/*function initLanguageSelector() {
+function initLanguageSelector() {
 
 	$('#language-selector select').change(function(event){
 
 		var language = $(this).val();
 
 
-		if(language) {
-			$.cookie('user_language', language, {'path': '/', 'expires': 365});
-		} else {
-			$.removeCookie('user_language', {'path': '/'});
+		if(language=='uk') {
+			$.cookie('django_language', language, {'path': '/', 'expires': 365});
+		} else if(language=='en'){
+			$.cookie('django_language', language, {'path': '/', 'expires': 365});
+		}
+		else
+		{
+			$.removeCookie('django_language', {'path': '/'});
 		}
 		location.reload(true);
 		return true;
 	})
-}*/
+}
 
 function initDateFields() {
 	$('input.dateinput').datetimepicker({
@@ -271,7 +275,7 @@ function initCreateStudentForm(form, modal) {
 $(document).ready(function(){
 	initJournal();
 	initGroupSelector();
-	//initLanguageSelector();
+	initLanguageSelector();
 	initDateFields();
 	initEditStudentPage();
 	initCreateStudentPage();

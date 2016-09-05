@@ -19,7 +19,7 @@ from .settings import MEDIA_ROOT, DEBUG
 from students.views.students import StudentDeleteView
 from students.views.groups import GroupAddView, GroupUpdateView, GroupDeleteView, groups_list
 from students.views.journal import JournalView
-from views import ProfileUpdateView, profile_page, users_list
+from stud_auth.views import ProfileUpdateView, profile_page, users_list
 
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required

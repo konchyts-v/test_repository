@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-16 19:35+0000\n"
+"POT-Creation-Date: 2016-09-05 16:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Group"
 msgstr ""
 
-#: models/group.py:11 templates/students/base.html:69
+#: models/group.py:11 templates/students/base.html:74
 msgid "Groups"
 msgstr ""
 
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: models/group.py:19 templates/students/groups_list.html:30
+#: models/group.py:19 templates/students/groups_list.html:32
 msgid "Leader"
 msgstr ""
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-#: models/student.py:12 templates/students/base.html:67
+#: models/student.py:12 templates/students/base.html:70
 #: templates/students/students_list.html:6
 msgid "Students"
 msgstr ""
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: models/student.py:22 templates/students/students_list.html:23
+#: models/student.py:22 templates/students/students_list.html:25
 msgid "Last Name"
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 
 #: models/student.py:37 templates/students/students_add.html:65
 #: templates/students/students_edit.html:65
-#: templates/students/students_list.html:20
+#: templates/students/students_list.html:22
 msgid "Photo"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgid "Please, fix this errors"
 msgstr ""
 
 #: templates/students/base.html:8 templates/students/base.html:31
-#: templates/students/base.html:95
+#: templates/students/base.html:113
 msgid "Students Accounting Service"
 msgstr ""
 
@@ -116,21 +116,37 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: templates/students/base.html:56
+#: templates/students/base.html:59
 msgid "Login"
 msgstr ""
 
-#: templates/students/base.html:57
+#: templates/students/base.html:60
 msgid "Register"
 msgstr ""
 
-#: templates/students/base.html:68 templates/students/journal.html:6
-#: templates/students/journal.html:8 templates/students/students_list.html:69
+#: templates/students/base.html:73 templates/students/journal.html:6
+#: templates/students/journal.html:8 templates/students/students_list.html:81
 msgid "Journal"
 msgstr ""
 
-#: templates/students/base.html:70
+#: templates/students/base.html:78
 msgid "Contact"
+msgstr ""
+
+#: templates/students/base.html:84
+msgid "Language: "
+msgstr ""
+
+#: templates/students/base.html:86
+msgid "Basic"
+msgstr ""
+
+#: templates/students/base.html:87
+msgid "English"
+msgstr ""
+
+#: templates/students/base.html:88
+msgid "Ukrainian"
 msgstr ""
 
 #: templates/students/groups_confirm_delete.html:7
@@ -166,35 +182,35 @@ msgstr ""
 msgid "Groups List"
 msgstr ""
 
-#: templates/students/groups_list.html:13
+#: templates/students/groups_list.html:14
 msgid "Add Group"
 msgstr ""
 
-#: templates/students/groups_list.html:36
-#: templates/students/students_list.html:44
+#: templates/students/groups_list.html:38
+#: templates/students/students_list.html:46
 msgid "Actions"
 msgstr ""
 
-#: templates/students/groups_list.html:44
+#: templates/students/groups_list.html:46
 msgid "None"
 msgstr ""
 
-#: templates/students/groups_list.html:48
-#: templates/students/students_list.html:64
+#: templates/students/groups_list.html:50
+#: templates/students/students_list.html:76
 msgid "Action"
 msgstr ""
 
-#: templates/students/groups_list.html:52
-#: templates/students/students_list.html:68
+#: templates/students/groups_list.html:54
+#: templates/students/students_list.html:80
 msgid "Edit"
 msgstr ""
 
-#: templates/students/groups_list.html:53
-#: templates/students/students_list.html:70
+#: templates/students/groups_list.html:55
+#: templates/students/students_list.html:82
 msgid "Delete"
 msgstr ""
 
-#: templates/students/groups_list.html:62
+#: templates/students/groups_list.html:64
 msgid "Groups are not found until in database."
 msgstr ""
 
@@ -307,39 +323,39 @@ msgstr ""
 msgid "Students List"
 msgstr ""
 
-#: templates/students/students_list.html:12
+#: templates/students/students_list.html:13
 msgid "Add Student"
 msgstr ""
 
-#: templates/students/students_list.html:32
+#: templates/students/students_list.html:34
 msgid "First Name"
 msgstr ""
 
-#: templates/students/students_list.html:39
+#: templates/students/students_list.html:41
 msgid "Ticket #"
 msgstr ""
 
-#: views/contact_admin.py:39
+#: views/contact_admin.py:41
 msgid "Send"
 msgstr ""
 
-#: views/contact_admin.py:42
+#: views/contact_admin.py:44
 msgid "Your e-mail"
 msgstr ""
 
-#: views/contact_admin.py:45
+#: views/contact_admin.py:47
 msgid "Title of the message"
 msgstr ""
 
-#: views/contact_admin.py:49
+#: views/contact_admin.py:51
 msgid "Message"
 msgstr ""
 
-#: views/contact_admin.py:70
+#: views/contact_admin.py:73
 msgid "There was an error on the server. Please, try again a bit later."
 msgstr ""
 
-#: views/contact_admin.py:74
+#: views/contact_admin.py:77
 msgid "Message was sended successfully"
 msgstr ""
 
@@ -355,58 +371,58 @@ msgstr ""
 msgid "Changes were canceled"
 msgstr ""
 
-#: views/students.py:59 views/students.py:152
+#: views/students.py:69 views/students.py:162
 msgid "First Name field is required"
 msgstr ""
 
-#: views/students.py:65 views/students.py:156
+#: views/students.py:75 views/students.py:166
 msgid "Last Name field is required"
 msgstr ""
 
-#: views/students.py:71 views/students.py:160
+#: views/students.py:81 views/students.py:170
 msgid "Birthday field is required"
 msgstr ""
 
-#: views/students.py:76 views/students.py:165
+#: views/students.py:86 views/students.py:175
 msgid "Enter the corrent type of date"
 msgstr ""
 
-#: views/students.py:82 views/students.py:169
+#: views/students.py:92 views/students.py:179
 msgid "Ticket number is reuired"
 msgstr ""
 
-#: views/students.py:88 views/students.py:173
+#: views/students.py:98 views/students.py:183
 msgid "Check the group and student"
 msgstr ""
 
-#: views/students.py:92 views/students.py:177
+#: views/students.py:102 views/students.py:187
 msgid "Check the correct group"
 msgstr ""
 
-#: views/students.py:104 views/students.py:187
+#: views/students.py:114 views/students.py:197
 msgid "Photo size larger than 2 MB"
 msgstr ""
 
-#: views/students.py:106 views/students.py:189
+#: views/students.py:116 views/students.py:199
 msgid "Check correct format of photo"
 msgstr ""
 
-#: views/students.py:115
+#: views/students.py:125
 msgid "Student added successfully!"
 msgstr ""
 
-#: views/students.py:125 views/students.py:223
+#: views/students.py:135 views/students.py:233
 msgid "Student added was canceled!"
 msgstr ""
 
-#: views/students.py:137
+#: views/students.py:147
 msgid "Student is not found"
 msgstr ""
 
-#: views/students.py:203
+#: views/students.py:213
 msgid "Student is leader of other group"
 msgstr ""
 
-#: views/students.py:212 views/students.py:234
+#: views/students.py:222 views/students.py:248
 msgid "Student updated successfully!"
 msgstr ""
