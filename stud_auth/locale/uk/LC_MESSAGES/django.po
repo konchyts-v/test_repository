@@ -67,7 +67,7 @@ msgstr "Редагувати"
 #: templates/registration/users_list.html:8
 #: templates/registration/users_list.html:14
 msgid "Users List"
-msgstr "Лист Користувачів"
+msgstr "Список Користувачів"
 
 #: templates/registration/login.html:5 templates/registration/login.html:7
 #: templates/registration/login.html:39

@@ -74,10 +74,11 @@ th.day-header {
   margin-right: 7px;
 }
 
-.log_text {
-  font-size: 18px;
-}
-
 .icon_log {
   margin-bottom: 10px;
+}
+
+#languages {
+  top: 20px;
+  text-align: right;
 }

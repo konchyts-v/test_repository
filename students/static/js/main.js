@@ -53,7 +53,7 @@ function initGroupSelector() {
 
 function initLanguageSelector() {
 
-	$('#language-selector select').change(function(event){
+	$('.language_check').click(function(event){
 
 		var language = $(this).val();
 
