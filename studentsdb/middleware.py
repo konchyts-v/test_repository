@@ -19,7 +19,7 @@ class RequestTimeMiddleware(object):
 		# calculate request execution time
 		request.end_time = datetime.now()
 		if 'text/html' in response.get('Content-Type', ''):
-			response.write('<br />Request took: %s' % str(request.end_time - request.start_time))
+			response.write('<div class="time_info">Request took: %s</div>' % str(request.end_time - request.start_time))
 
 		return response
 

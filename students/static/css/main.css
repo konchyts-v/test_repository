@@ -82,3 +82,11 @@ th.day-header {
   top: 20px;
   text-align: right;
 }
+
+.time_info {
+  position: absolute;
+  right: 113px;
+  top: 55px;
+  color: red;
+  font-weight: bold;
+}
