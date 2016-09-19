@@ -229,3 +229,6 @@ SMTPSenderRefused: (530, '5.5.1 Authentication Required. Learn more at\n5.5.1  h
 INFO 2016-08-16 10:07:44,376 signals: Group updated: eeee (ID: 10)
 INFO 2016-08-16 10:08:17,418 signals: Student deleted: Sheva Combo (ID: 5)
 INFO 2016-08-16 10:27:38,739 signals: Student added: vas vas (ID: 21)
+INFO 2016-09-19 09:26:28,829 signals: Group added: Group1 (ID: 1)
+INFO 2016-09-19 09:27:10,786 signals: Group added: Group1 (ID: 1)
+INFO 2016-09-19 09:27:45,804 signals: Group added: Group1 (ID: 1)
