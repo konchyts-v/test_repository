@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load staticfiles %}
 
-{% block meta_title %}Редагувати Студента{% endblock meta_title %}
+{% block meta_title %}{% trans "Edit Student"%}{% endblock meta_title %}
 
 {% block status_message %}
   {% if errors %}
@@ -13,7 +13,7 @@
   {% endif %}
 {% endblock status_message %}
 
-{% block title %}Редагувати Студента{% endblock title %}
+{% block title %}{% trans "Edit Student"%}{% endblock title %}
 
 {% block content %}
 
@@ -64,7 +64,7 @@
   <div class="form-group {% if errors.photo %}has-error{% endif %}">
     <label for="photo"class="col-sm-2 control-label">{% trans "Photo" %}</label>
     <div class="col-sm-10">
-      <input type="file" value="" name="photo"
+      <input type="file" value="{{ student.photo }}" name="photo"
       		 id="photo"
              class="form-control" />
       <span class="help-block">{{ errors.photo }}</span>
@@ -105,10 +105,10 @@
   <div class="form-group">
     <label class="col-sm-2 control-label"></label>
     <div class="col-sm-10">
-      <input type="submit" value="Зберегти" name="save_button"
+      <input type="submit" value="{% trans "Save" %}" name="save_button"
              class="btn btn-primary" />
       <button type="submit" name="cancel_button"
-              class="btn btn-link">Скасувати</button>
+              class="btn btn-link">{% trans "Cancel" %}</button>
     </div>
   </div>
 </form>

@@ -192,7 +192,7 @@ def students_edit(request, pk):
                 destinations = ('jpg', 'bmp', 'png', 'gif')
                 if destination in destinations:
                     if photo.size <= 2000000:
-                        data['photo'] = photo
+                        passzzzz
                     else:
                         errors['photo'] = _(u"Photo size larger than 2 MB")
                 else:

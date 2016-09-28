@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-05 16:38+0000\n"
+"POT-Creation-Date: 2016-09-27 15:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,130 +19,132 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: models.py:12
+#: stud_auth/models.py:12
 msgid "User Profile"
 msgstr "Профіль Користувача"
 
-#: models.py:18 templates/registration/profile.html:46
+#: stud_auth/models.py:18 stud_auth/templates/registration/profile.html:46
 msgid "Mobile Phone"
 msgstr "Моб.тел"
 
-#: models.py:24 templates/registration/profile.html:53
+#: stud_auth/models.py:24 stud_auth/templates/registration/profile.html:53
 msgid "Address"
 msgstr "Адреса"
 
-#: models.py:30 templates/registration/profile.html:60
+#: stud_auth/models.py:30 stud_auth/templates/registration/profile.html:60
 msgid "Passport number"
 msgstr "Номер Паспорта"
 
-#: models.py:35 templates/registration/profile.html:67
-#: templates/registration/users_list.html:21
+#: stud_auth/models.py:35 stud_auth/templates/registration/profile.html:67
+#: stud_auth/templates/registration/users_list.html:21
 msgid "Photo"
 msgstr "Фото"
 
-#: templates/registration/edit_profile.html:7
-#: templates/registration/edit_profile.html:17
+#: stud_auth/templates/registration/edit_profile.html:7
+#: stud_auth/templates/registration/edit_profile.html:17
 msgid "Edit Profile"
 msgstr "Редагування Профілю"
 
-#: templates/registration/edit_profile.html:12
+#: stud_auth/templates/registration/edit_profile.html:12
 msgid "Please, fix this errors"
 msgstr "Виправте, будь ласка, наступні помилки"
 
-#: templates/registration/edit_profile.html:21
-#: templates/registration/profile.html:17
-#: templates/registration/users_list.html:12
+#: stud_auth/templates/registration/edit_profile.html:21
+#: stud_auth/templates/registration/profile.html:17
+#: stud_auth/templates/registration/users_list.html:12
 msgid "Profile"
 msgstr "Профіль"
 
-#: templates/registration/edit_profile.html:22
-#: templates/registration/profile.html:18
-#: templates/registration/users_list.html:13
+#: stud_auth/templates/registration/edit_profile.html:22
+#: stud_auth/templates/registration/profile.html:18
+#: stud_auth/templates/registration/users_list.html:13
 msgid "Edit"
 msgstr "Редагувати"
 
-#: templates/registration/edit_profile.html:23
-#: templates/registration/profile.html:19
-#: templates/registration/users_list.html:6
-#: templates/registration/users_list.html:8
-#: templates/registration/users_list.html:14
+#: stud_auth/templates/registration/edit_profile.html:23
+#: stud_auth/templates/registration/profile.html:19
+#: stud_auth/templates/registration/users_list.html:6
+#: stud_auth/templates/registration/users_list.html:8
+#: stud_auth/templates/registration/users_list.html:14
 msgid "Users List"
 msgstr "Список Користувачів"
 
-#: templates/registration/login.html:5 templates/registration/login.html:7
-#: templates/registration/login.html:39
+#: stud_auth/templates/registration/login.html:5
+#: stud_auth/templates/registration/login.html:7
+#: stud_auth/templates/registration/login.html:39
 msgid "Login"
 msgstr "Ввійти"
 
-#: templates/registration/login.html:15 templates/registration/profile.html:11
-#: templates/registration/registration_form.html:11
+#: stud_auth/templates/registration/login.html:15
+#: stud_auth/templates/registration/profile.html:11
+#: stud_auth/templates/registration/registration_form.html:11
 msgid "Please, correct the following errors."
 msgstr "Виправте, будь ласка, виправте помилки."
 
-#: templates/registration/login.html:28
-#: templates/registration/registration_form.html:22
+#: stud_auth/templates/registration/login.html:28
+#: stud_auth/templates/registration/registration_form.html:22
 msgid "Your Username"
 msgstr "Ваш Нікнейм"
 
-#: templates/registration/login.html:34
-#: templates/registration/registration_form.html:34
+#: stud_auth/templates/registration/login.html:34
+#: stud_auth/templates/registration/registration_form.html:34
 msgid "Your Password"
 msgstr "Ваш Пароль"
 
-#: templates/registration/profile.html:25
+#: stud_auth/templates/registration/profile.html:25
 msgid "Email"
 msgstr "Ел.пошта"
 
-#: templates/registration/profile.html:32
-#: templates/registration/users_list.html:24
+#: stud_auth/templates/registration/profile.html:32
+#: stud_auth/templates/registration/users_list.html:24
 msgid "Username"
 msgstr "Нікнейм"
 
-#: templates/registration/profile.html:39
+#: stud_auth/templates/registration/profile.html:39
 msgid "Joined"
 msgstr "Зареєстрований"
 
-#: templates/registration/registration_form.html:5
-#: templates/registration/registration_form.html:7
+#: stud_auth/templates/registration/registration_form.html:5
+#: stud_auth/templates/registration/registration_form.html:7
 msgid "Register Form"
 msgstr "Реєстрація"
 
-#: templates/registration/registration_form.html:28
+#: stud_auth/templates/registration/registration_form.html:28
 msgid "Your Email"
 msgstr "Ваша ел.пошта"
 
-#: templates/registration/registration_form.html:40
+#: stud_auth/templates/registration/registration_form.html:40
 msgid "Confirm Password"
 msgstr "Підтвердження пароля"
 
-#: templates/registration/registration_form.html:45
+#: stud_auth/templates/registration/registration_form.html:45
 msgid "Register"
 msgstr "Реєстрація"
 
-#: templates/registration/users_list.html:31
+#: stud_auth/templates/registration/users_list.html:31
 msgid "First Name"
 msgstr "Ім'я"
 
-#: templates/registration/users_list.html:32
+#: stud_auth/templates/registration/users_list.html:32
 msgid "Last Name"
 msgstr "Прізвище"
 
-#: views.py:53
+#: stud_auth/views.py:53
 msgid "Save"
 msgstr "Зберегти"
 
-#: views.py:56
+#: stud_auth/views.py:56
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: views.py:64
+#: stud_auth/views.py:64
 msgid "Changes saved successfully"
 msgstr "Зміни успішно збережені"
 
-#: views.py:70
+#: stud_auth/views.py:70
 msgid "Changes were canceled"
 msgstr "Зміни були скасовані"
 
-#: views.py:85
+#: stud_auth/views.py:85
 msgid "User is not found"
 msgstr "Користувач не знайдений"
