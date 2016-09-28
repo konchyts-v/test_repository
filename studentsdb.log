@@ -780,3 +780,4 @@ INFO 2016-09-28 15:30:02,082 signals: Student added: Student2 Last Name 2 (ID: 3
 INFO 2016-09-28 15:30:02,084 signals: Student added: Student3 Last Name 3 (ID: 4)
 INFO 2016-09-28 15:30:02,086 signals: Group added: Group1 (ID: 1)
 INFO 2016-09-28 15:30:02,089 signals: Group added: Group2 (ID: 2)
+INFO 2016-09-28 15:33:37,701 signals: Student updated: AAAUU sadasd AAAA (ID: 10)
