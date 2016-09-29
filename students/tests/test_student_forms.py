@@ -35,31 +35,31 @@ class TestStudentUpdateForm(TestCase):
 		#self.assertIn('action="%s"' % self.url, response.content)
 		#self.assertIn('18rLEyEn4jU.jpg', response.content)
 
-	"""def test_success(self):
+	#def test_success(self):
 	    # login as admin to access student edit form
-		self.client.login(username='admin', password='admin')
+		#self.client.login(username='admin', password='admin')
 		    
 		# post form with valid data
 		# TODO: post new photo for homework
-		group = Group.objects.filter(title='Group2')[0]
-		response = self.client.post(self.url, {'first_name': 'Updated Name', 'last_name': 'Updated Last Name', 'ticket': '567', 'student_group': 2, 'birthday': '1990-11-11'}, follow=True)
+		#group = Group.objects.filter(title='Group2')[0]
+		#response = self.client.post(self.url, {'first_name': 'Updated Name', 'last_name': 'Updated Last Name', 'ticket': '567', 'student_group': 2, 'birthday': '1990-11-11'}, follow=True)
 
 		    
 		# check response status
-		self.assertEqual(response.status_code, 200)
+		#self.assertEqual(response.status_code, 200)
 		    
 		# test updated student details
-		student = Student.objects.get(pk=1)
+		#student = Student.objects.get(pk=1)
 		#self.assertEqual(student.first_name, 'Updated Name')
 		#self.assertEqual(student.last_name, 'Updated Last Name')
 		#self.assertEqual(student.ticket, '567')
 		#self.assertEqual(student.student_group, group)
 		    
 		# check proper redirect after form post
-		self.assertIn('Student updated successfully', response.content)
-		self.assertEqual(response.redirect_chain[0][0],
-			'http://testserver/?status_message=' +
-			'Student%20updated%20successfully!')"""
+		#self.assertIn('Student updated successfully', response.content)
+		#self.assertEqual(response.redirect_chain[0][0],
+			#'http://testserver/?status_message=' +
+			#'Student%20updated%20successfully!')
 
 	def test_access(self):
 		# try to access form as anonymous user
