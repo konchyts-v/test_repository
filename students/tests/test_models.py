@@ -1,7 +1,9 @@
+from datetime import datetime, date
 from django.test import TestCase
 
 from students.models.student import Student
 from students.models.group import Group
+from students.models.monthjournal import MonthJournal
 
 
 class StudentModelTests(TestCase):
@@ -21,3 +23,15 @@ class GroupModelTests(TestCase):
 
 		self.assertEqual(unicode(group1), 'Test Group')
 		self.assertEqual(unicode(group2), 'Demo Group (Demo Student)')
+
+class JournalModelTests(TestCase):
+	"""Test journal model"""
+
+	def test_unicode(self):
+		student = Student(first_name="Teest", last_name="Student")
+		month_test = MonthJournal(student=student, date="2000-01-01")
+		current_date = datetime.strptime(month_test.date, '%Y-%m-%d').date()
+		month = date(current_date.year, current_date.month, 1)
+		month_test = MonthJournal(student=student, date=month)
+
+		self.assertEqual(unicode(month_test), 'Student: 1, 2000')
