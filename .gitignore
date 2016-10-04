@@ -3,3 +3,5 @@
 *.mo
 *.egg
 *.egg-info
+*.xml
+*.iml
