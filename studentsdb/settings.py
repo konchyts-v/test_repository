@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'stud_auth',
     'registration',
     'social.apps.django_app.default',
+    'django_coverage',
     'students',
     'studentsdb',
 ]
@@ -228,3 +229,6 @@ SOCIAL_AUTH_FACEBOOK_SECRET = SOCIAL_AUTH_FACEBOOK_SECRETf
 
 # for registration with email
 ACCOUNT_ACTIVATION_DAYS = 10
+
+# django-coverage
+COVERAGE_REPORT_HTML_OUTPUT_DIR = os.path.join(BASE_DIR, '..', 'coverage')
