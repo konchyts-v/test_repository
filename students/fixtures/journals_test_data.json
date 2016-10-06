@@ -1,0 +1,43 @@
+[
+  {
+    "fields": {
+      "first_name": "Vitaliy",
+      "last_name": "Konchyts",
+      "middle_name": "Valeriyovich",
+      "photo": "",
+      "notes": "",
+      "student_group": 1,
+      "birthday": "1997-01-01",
+      "ticket": "001"
+    },
+    "model": "students.student",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "title": "Group 1",
+      "leader": 1,
+      "notes": ""
+    },
+    "model": "students.group",
+    "pk": 1
+  },
+  {
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2014-11-19T00:17:12.803Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$12000$vwDz0jnc05bN$cZSSKKOkBa0RNAvEyRqNY1OrIfFpH6mpOxdLyc2aB0g=",
+        "email": "admin@admin.com",
+        "date_joined": "2014-11-01T12:59:32.011Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+  }
+]
