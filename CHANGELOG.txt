@@ -1,0 +1,11 @@
+Changelog
+=========
+
+[1.0] - (2016-10-17)
+--------------------
+
+* Login bug fixed.
+  [git username]
+
+* Initial functionality in place.
+  [vikon]
